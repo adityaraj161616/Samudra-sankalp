@@ -39,14 +39,14 @@ export default function NGODashboard() {
     <div className="min-h-screen bg-background pb-20">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/marine-biodiversity.jpg" alt="Marine biodiversity" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-green-900/60" />
+          <Image src="/forest-canopy-sunlight.jpg" alt="Forest canopy" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-green-900/70 to-emerald-900/60" />
         </div>
 
         {/* Logo */}
         <div className="absolute top-6 left-6 z-20">
           <Image
-            src="/logo-placeholder.jpg"
+            src="/Logo.png"
             alt="Samudra Sankalp Logo"
             width={140}
             height={44}
@@ -58,7 +58,7 @@ export default function NGODashboard() {
           <div className="max-w-md mx-auto text-white">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-3xl font-semibold mb-2">Welcome Back</h1>
-              <p className="text-white/80 mb-8">Ocean Guardian Dashboard</p>
+              <p className="text-white/80 mb-8">Forest Guardian Dashboard</p>
 
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">

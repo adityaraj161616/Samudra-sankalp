@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { useRouter, useParams } from "next/navigation"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowLeft, MapPin, Clock, DollarSign, User, Calendar, Camera, CheckCircle, Star, Award } from "lucide-react"
+import { ArrowLeft, MapPin, Clock, DollarSign, User, Calendar, Camera, CheckCircle, Star, TreePine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -80,12 +80,13 @@ export default function TaskDetailsPage() {
 
   if (!task || !claim) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-4">
-            <MapPin className="h-8 w-8 text-slate-400" />
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <TreePine className="h-8 w-8 text-green-600" />
           </div>
-          <p className="text-xl font-semibold text-slate-600">Task not found</p>
+          <p className="text-xl font-semibold text-green-800">Task not found</p>
+          <p className="text-green-600 mt-2">The verification task you're looking for doesn't exist.</p>
         </div>
       </div>
     )
@@ -100,7 +101,7 @@ export default function TaskDetailsPage() {
       case "high":
         return "bg-red-500 text-white"
       case "medium":
-        return "bg-yellow-500 text-white"
+        return "bg-amber-500 text-white"
       case "low":
         return "bg-green-500 text-white"
       default:
@@ -120,13 +121,17 @@ export default function TaskDetailsPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Enhanced Background */}
       <div ref={bgRef} className="absolute inset-0 z-0">
-        <Image src="/mangrove-forest-aerial.jpg" alt="Mangrove forest aerial view" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-blue-900/70 to-green-900/80" />
+        <Image
+          src="/hero-forest-background.jpg"
+          alt="Forest restoration site aerial view"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/90 via-emerald-800/70 to-green-900/85" />
       </div>
 
-      {/* Enhanced Header */}
       <div
         ref={headerRef}
         className="relative z-10 bg-white/10 backdrop-blur-xl border-b border-white/20 text-white p-6"
@@ -142,12 +147,12 @@ export default function TaskDetailsPage() {
               <ArrowLeft className="h-6 w-6" />
             </Button>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-green-500 rounded-xl flex items-center justify-center">
-                <Award className="h-5 w-5 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                <TreePine className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">Verification Task</h1>
-                <p className="text-white/80 text-sm">Review and verify conservation claim</p>
+                <h1 className="text-2xl font-bold">Tree Restoration Verification</h1>
+                <p className="text-white/80 text-sm">Review and verify tree planting claim</p>
               </div>
             </div>
           </div>
@@ -162,10 +167,10 @@ export default function TaskDetailsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <Card className="premium-card bg-white/95 backdrop-blur-xl border-white/30">
+            <Card className="bg-white/95 backdrop-blur-xl border-white/30 shadow-xl">
               <CardHeader>
                 <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl leading-tight pr-4">{task.title}</CardTitle>
+                  <CardTitle className="text-xl leading-tight pr-4 text-green-800">{task.title}</CardTitle>
                   <Badge className={`${getPriorityColor(task.priority)} font-semibold px-3 py-1`}>
                     {task.priority.toUpperCase()}
                   </Badge>
@@ -177,8 +182,8 @@ export default function TaskDetailsPage() {
                 {/* Task Details Grid */}
                 <div className="grid grid-cols-2 gap-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-blue-600" />
+                    <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 font-medium">Distance</p>
@@ -187,8 +192,8 @@ export default function TaskDetailsPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                      <Clock className="h-5 w-5 text-green-600" />
+                    <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                      <Clock className="h-5 w-5 text-emerald-600" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 font-medium">Duration</p>
@@ -197,8 +202,8 @@ export default function TaskDetailsPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center">
-                      <DollarSign className="h-5 w-5 text-yellow-600" />
+                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+                      <DollarSign className="h-5 w-5 text-amber-600" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 font-medium">Reward</p>
@@ -207,8 +212,8 @@ export default function TaskDetailsPage() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
-                      <User className="h-5 w-5 text-purple-600" />
+                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <User className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 font-medium">NGO</p>
@@ -217,11 +222,10 @@ export default function TaskDetailsPage() {
                   </div>
                 </div>
 
-                {/* Location */}
-                <div className="p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl border border-blue-200/50">
+                <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/50">
                   <div className="flex items-center gap-3 mb-2">
-                    <MapPin className="h-5 w-5 text-blue-600" />
-                    <span className="font-bold text-blue-800">Verification Location</span>
+                    <MapPin className="h-5 w-5 text-green-600" />
+                    <span className="font-bold text-green-800">Verification Location</span>
                   </div>
                   <p className="text-slate-700 font-medium">{task.location}</p>
                 </div>
@@ -229,29 +233,28 @@ export default function TaskDetailsPage() {
             </Card>
           </motion.div>
 
-          {/* Claim Summary */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.65 }}
           >
-            <Card className="premium-card bg-white/95 backdrop-blur-xl border-white/30">
+            <Card className="bg-white/95 backdrop-blur-xl border-white/30 shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                    <TreePine className="h-4 w-4 text-white" />
                   </div>
-                  Claim Summary
+                  <span className="text-green-800">Tree Restoration Claim</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <p className="text-sm text-slate-500 font-medium mb-1">Type</p>
+                    <p className="text-sm text-slate-500 font-medium mb-1">Project Type</p>
                     <p className="font-bold text-slate-800 text-lg">{claim.type}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500 font-medium mb-1">Quantity</p>
+                    <p className="text-sm text-slate-500 font-medium mb-1">Trees Planted</p>
                     <p className="font-bold text-green-600 text-lg">
                       {claim.quantity} {claim.unit}
                     </p>
@@ -259,38 +262,37 @@ export default function TaskDetailsPage() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-slate-500 font-medium mb-2">Description</p>
+                  <p className="text-sm text-slate-500 font-medium mb-2">Project Description</p>
                   <p className="text-slate-700 leading-relaxed">{claim.description}</p>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm text-slate-500 bg-slate-50 rounded-lg p-3">
-                  <Calendar className="h-4 w-4" />
+                <div className="flex items-center gap-2 text-sm text-slate-500 bg-green-50 rounded-lg p-3 border border-green-100">
+                  <Calendar className="h-4 w-4 text-green-600" />
                   <span>Submitted {formatDate(claim.submittedAt)}</span>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* NGO's Photo Proof */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Card className="premium-card bg-white/95 backdrop-blur-xl border-white/30">
+            <Card className="bg-white/95 backdrop-blur-xl border-white/30 shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-500 rounded-lg flex items-center justify-center">
                     <Camera className="h-4 w-4 text-white" />
                   </div>
-                  Photo Evidence
+                  <span className="text-green-800">Photo Evidence</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video bg-slate-100 rounded-xl overflow-hidden border-2 border-slate-200">
+                <div className="aspect-video bg-green-50 rounded-xl overflow-hidden border-2 border-green-200">
                   <Image
-                    src={claim.photos[0] || "/placeholder.svg?height=200&width=300&text=Proof+Photo"}
-                    alt="NGO proof"
+                    src={claim.photos[0] || "/forest-saplings-planted.jpg"}
+                    alt="Tree planting proof"
                     width={400}
                     height={225}
                     className="w-full h-full object-cover"
@@ -299,7 +301,7 @@ export default function TaskDetailsPage() {
                 <div className="flex items-center justify-between mt-4">
                   <p className="text-sm text-slate-500">Photo submitted by {claim.ngoName}</p>
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                    <Star className="h-4 w-4 text-amber-500 fill-current" />
                     <span className="text-sm font-medium text-slate-600">High Quality</span>
                   </div>
                 </div>
@@ -308,16 +310,18 @@ export default function TaskDetailsPage() {
           </motion.div>
         </div>
 
-        {/* Action Button */}
         <motion.div
           ref={actionRef}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <Button onClick={handleAcceptTask} className="w-full h-16 btn-premium text-xl font-bold">
+          <Button
+            onClick={handleAcceptTask}
+            className="w-full h-16 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white text-xl font-bold shadow-xl"
+          >
             <CheckCircle className="h-6 w-6 mr-3" />
-            Accept & Start Verification
+            Accept & Start Tree Verification
           </Button>
         </motion.div>
       </div>

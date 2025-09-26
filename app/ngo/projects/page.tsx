@@ -13,42 +13,42 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 const mockProjects = [
   {
     id: 1,
-    title: "Coral Reef Restoration Initiative",
-    description: "Large-scale coral restoration project in the Bay of Bengal focusing on native species recovery.",
-    location: "Andaman Islands",
+    title: "Forest Restoration Initiative",
+    description: "Large-scale forest restoration project in the Western Ghats focusing on native species recovery.",
+    location: "Western Ghats, Karnataka",
     status: "Active",
     startDate: "2024-01-15",
     endDate: "2024-12-31",
     participants: 25,
     budget: "₹15,00,000",
     progress: 65,
-    category: "Marine Conservation",
+    category: "Forest Conservation",
   },
   {
     id: 2,
-    title: "Mangrove Plantation Drive",
-    description: "Community-driven mangrove plantation to protect coastal areas from erosion.",
-    location: "Sundarbans, West Bengal",
+    title: "Urban Tree Plantation Drive",
+    description: "Community-driven tree plantation to improve urban air quality and reduce heat islands.",
+    location: "Delhi NCR",
     status: "Planning",
     startDate: "2024-03-01",
     endDate: "2024-08-30",
     participants: 40,
     budget: "₹8,50,000",
     progress: 20,
-    category: "Coastal Protection",
+    category: "Urban Forestry",
   },
   {
     id: 3,
-    title: "Marine Plastic Cleanup",
-    description: "Systematic removal of plastic waste from marine ecosystems with community involvement.",
-    location: "Mumbai Coast",
+    title: "Community Nursery Development",
+    description: "Systematic development of community nurseries for native species propagation.",
+    location: "Rajasthan Villages",
     status: "Completed",
     startDate: "2023-10-01",
     endDate: "2024-01-31",
     participants: 60,
     budget: "₹5,75,000",
     progress: 100,
-    category: "Waste Management",
+    category: "Nursery Development",
   },
 ]
 
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -93,12 +93,12 @@ export default function ProjectsPage() {
               </Button>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Projects</h1>
-                <p className="text-gray-600">Manage your marine conservation projects</p>
+                <p className="text-gray-600">Manage your forest restoration projects</p>
               </div>
             </div>
             <Button
               onClick={() => router.push("/ngo/projects/new")}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-green-600 hover:bg-green-700 text-white"
             >
               <Plus className="h-4 w-4 mr-2" />
               New Project
@@ -222,7 +222,7 @@ export default function ProjectsPage() {
             </p>
             <Button
               onClick={() => router.push("/ngo/projects/new")}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="bg-green-600 hover:bg-green-700 text-white"
             >
               <Plus className="h-4 w-4 mr-2" />
               Create New Project

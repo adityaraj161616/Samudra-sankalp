@@ -16,11 +16,11 @@ import { mockProjects } from "@/lib/mock-data"
 
 const claimTypes = [
   "Saplings Planted",
-  "Waste Collected",
-  "Coral Transplantation",
-  "Beach Cleanup",
-  "Water Quality Testing",
-  "Marine Life Survey",
+  "Trees Planted",
+  "Seedlings Prepared",
+  "Forest Area Cleared",
+  "Soil Testing",
+  "Biodiversity Survey",
 ]
 
 export default function SubmitClaimPage() {
@@ -57,15 +57,15 @@ export default function SubmitClaimPage() {
     switch (type) {
       case "Saplings Planted":
         return "saplings"
-      case "Waste Collected":
-        return "kg"
-      case "Coral Transplantation":
-        return "fragments"
-      case "Beach Cleanup":
+      case "Trees Planted":
+        return "trees"
+      case "Seedlings Prepared":
+        return "seedlings"
+      case "Forest Area Cleared":
         return "sq meters"
-      case "Water Quality Testing":
+      case "Soil Testing":
         return "samples"
-      case "Marine Life Survey":
+      case "Biodiversity Survey":
         return "species"
       default:
         return "units"
@@ -73,7 +73,7 @@ export default function SubmitClaimPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
       <div className="bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center gap-4">
@@ -86,12 +86,12 @@ export default function SubmitClaimPage() {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-slate-900">Submit New Claim</h1>
-                <p className="text-slate-600 text-sm">Document your conservation impact</p>
+                <p className="text-slate-600 text-sm">Document your forest restoration impact</p>
               </div>
             </div>
           </div>

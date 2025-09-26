@@ -8,6 +8,7 @@ import { Mail, Lock, Eye, EyeOff, Shield, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -42,13 +43,14 @@ export default function LoginPage() {
 
       {/* Professional Header */}
       <div className="absolute top-6 left-6 flex items-center gap-3">
-        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-          <Shield className="h-6 w-6 text-white" />
-        </div>
-        <div>
-          <div className="font-semibold text-slate-800">Samudra Sankalp</div>
-          <div className="text-sm text-slate-600">Smart India Hackathon 2024</div>
-        </div>
+        <Image
+          src="/logo-placeholder.jpg"
+          alt="Vanasthali Sankalp Logo"
+          width={120}
+          height={38}
+          className="h-8 w-auto object-contain"
+          priority
+        />
       </div>
 
       <div className="w-full max-w-md">
@@ -189,13 +191,24 @@ export default function LoginPage() {
                 <p className="text-xs text-slate-500 mt-2">Password: any value</p>
               </div>
             </div>
+
+            <div className="text-center text-sm text-slate-600 mt-6">
+              Don't have an account?{" "}
+              <button
+                type="button"
+                onClick={() => router.push("/signup")}
+                className="text-blue-600 hover:text-blue-700 font-medium"
+              >
+                Sign up here
+              </button>
+            </div>
           </CardContent>
         </Card>
 
         {/* Footer */}
         <div className="text-center mt-6 text-sm text-slate-600">
-          <p>© 2025 Samudra Sankalp - Smart India Hackathon</p>
-          <p className="mt-1">Ocean Conservation Platform</p>
+          <p>© 2025 Vanasthali Sankalp - Tree Restoration Platform</p>
+          <p className="mt-1">Building a greener future together</p>
         </div>
       </div>
     </div>

@@ -14,8 +14,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Samudra Sankalp - Ocean's Pledge",
-  description: "Ocean conservation platform connecting NGOs and verifiers for environmental impact tracking",
+  title: "Samudra Sankalp - Forest Restoration Pledge",
+  description:
+    "Tree restoration platform connecting NGOs and verifiers for environmental reforestation impact tracking",
   generator: "v0.app",
 }
 
