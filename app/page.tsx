@@ -139,7 +139,7 @@ export default function HomePage() {
         </div>
 
         <div ref={logoRef} className="absolute top-8 left-8 z-20">
-          <div className="bg-white/15 backdrop-blur-md rounded-xl px-6 py-3 border border-white/20 shadow-2xl">
+          {/* <div className="bg-white/15 backdrop-blur-md rounded-xl px-6 py-3 border border-white/20 shadow-2xl"> */}
             <div className="flex items-center gap-3">
               <Image
                 src="/Logo.png"
@@ -150,7 +150,7 @@ export default function HomePage() {
                 priority
               />
             </div>
-          </div>
+          {/* </div> */}
         </div>
 
         <div className="relative z-10 text-center text-white px-6 max-w-7xl mx-auto">
