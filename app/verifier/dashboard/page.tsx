@@ -10,6 +10,7 @@ import { Navbar } from "@/components/ui/navbar"
 import { mockTasks, mockUserStats } from "@/lib/mock-data"
 import { animations } from "@/lib/animations"
 import Link from "next/link"
+import Image from "next/image"
 
 const navItems = [
   { href: "/verifier/dashboard", label: "Tasks", icon: <TreePine className="h-5 w-5" /> },
@@ -73,9 +74,21 @@ export default function VerifierDashboard() {
           <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-green-800/90 to-transparent">
             <div className="max-w-md mx-auto">
               <div className="flex items-center justify-between text-white">
-                <div>
-                  <h1 className="text-xl font-semibold">Tree Restoration Tasks</h1>
-                  <p className="text-white/90 text-sm">Verify forest restoration projects</p>
+                <div className="flex items-center gap-3">
+                  <Link href="/" className="flex items-center">
+                    <Image
+                      src="/Logo2.png"
+                      alt="Vanasthali Sankalp Logo"
+                      width={100}
+                      height={32}
+                      className="h-6 w-auto object-contain hover:opacity-80 transition-opacity"
+                      priority
+                    />
+                  </Link>
+                  <div>
+                    <h1 className="text-lg md:text-xl font-semibold">Tree Restoration Tasks</h1>
+                    <p className="text-white/90 text-xs md:text-sm">Verify forest restoration projects</p>
+                  </div>
                 </div>
                 <Button variant="ghost" size="sm" className="text-white hover:bg-white/20">
                   <Filter className="h-4 w-4" />

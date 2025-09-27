@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import Link from "next/link"
 import { CheckCircle, ArrowRight, Home, Waves } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -15,6 +16,19 @@ export default function ConfirmationPage() {
         <Image src="/marine-conservation-team.jpg" alt="Marine conservation success" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-green-900/90 via-blue-900/80 to-cyan-900/85" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+      </div>
+
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/Logo2.png"
+            alt="Vanasthali Sankalp Logo"
+            width={120}
+            height={38}
+            className="h-6 w-auto md:h-8 object-contain hover:opacity-80 transition-opacity"
+            priority
+          />
+        </Link>
       </div>
 
       <div className="relative z-10 max-w-md w-full">

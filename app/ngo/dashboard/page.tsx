@@ -44,32 +44,34 @@ export default function NGODashboard() {
         </div>
 
         {/* Logo */}
-        <div className="absolute top-6 left-6 z-20">
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20">
           <Image
-            src="/Logo.png"
+            src="/Logo2.png"
             alt="Samudra Sankalp Logo"
-            width={140}
-            height={44}
-            className="h-8 w-auto"
+            width={120}
+            height={38}
+            className="h-6 w-auto md:h-8 md:w-auto"
           />
         </div>
 
-        <div className="relative z-10 px-6 py-12">
+        <div className="relative z-10 px-4 md:px-6 py-16 md:py-12">
           <div className="max-w-md mx-auto text-white">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <h1 className="text-3xl font-semibold mb-2">Welcome Back</h1>
-              <p className="text-white/80 mb-8">Forest Guardian Dashboard</p>
+              <div className="mt-8 md:mt-4">
+                <h1 className="text-2xl md:text-3xl font-semibold mb-2">Welcome Back</h1>
+                <p className="text-white/80 mb-6 md:mb-8 text-sm md:text-base">Forest Guardian Dashboard</p>
+              </div>
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+              <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-6">
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 w-full sm:w-auto justify-center">
                   <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                  <span className="font-semibold">{stats.reputation}</span>
-                  <span className="text-white/80 text-sm">Reputation</span>
+                  <span className="font-semibold text-sm md:text-base">{stats.reputation}</span>
+                  <span className="text-white/80 text-xs md:text-sm">Reputation</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 md:px-4 py-2 w-full sm:w-auto justify-center">
                   <Target className="h-4 w-4 text-green-400" />
-                  <span className="font-semibold">{stats.impactScore.toLocaleString()}</span>
-                  <span className="text-white/80 text-sm">Impact</span>
+                  <span className="font-semibold text-sm md:text-base">{stats.impactScore.toLocaleString()}</span>
+                  <span className="text-white/80 text-xs md:text-sm">Impact</span>
                 </div>
               </div>
             </motion.div>
@@ -77,24 +79,24 @@ export default function NGODashboard() {
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-6 -mt-6 relative z-20">
+      <div className="max-w-md mx-auto px-4 md:px-6 -mt-4 md:-mt-6 relative z-20">
         <motion.div
-          className="grid grid-cols-2 gap-4 mb-8"
+          className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <Card className="premium-card text-center">
-            <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-blue-600 mb-1">{stats.activeClaims}</div>
-              <div className="text-sm text-slate-600">Active Claims</div>
+            <CardContent className="pt-4 md:pt-6 pb-4 md:pb-6">
+              <div className="text-2xl md:text-3xl font-bold text-green-600 mb-1">{stats.activeClaims}</div>
+              <div className="text-xs md:text-sm text-slate-600">Active Claims</div>
             </CardContent>
           </Card>
 
           <Card className="premium-card text-center">
-            <CardContent className="pt-6">
-              <div className="text-3xl font-bold text-green-600 mb-1">{stats.verifiedClaims}</div>
-              <div className="text-sm text-slate-600">Verified</div>
+            <CardContent className="pt-4 md:pt-6 pb-4 md:pb-6">
+              <div className="text-2xl md:text-3xl font-bold text-emerald-600 mb-1">{stats.verifiedClaims}</div>
+              <div className="text-xs md:text-sm text-slate-600">Verified</div>
             </CardContent>
           </Card>
         </motion.div>
@@ -104,14 +106,14 @@ export default function NGODashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold">Active Projects</h2>
-            <Button variant="ghost" size="sm" className="text-blue-600" asChild>
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h2 className="text-xl md:text-2xl font-semibold">Active Projects</h2>
+            <Button variant="ghost" size="sm" className="text-green-600 text-sm" asChild>
               <Link href="/ngo/projects">View All</Link>
             </Button>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -122,7 +124,7 @@ export default function NGODashboard() {
                 <Card className="premium-card overflow-hidden">
                   <CardContent className="p-0">
                     <div className="flex">
-                      <div className="w-24 h-24 relative flex-shrink-0">
+                      <div className="w-20 h-20 md:w-24 md:h-24 relative flex-shrink-0">
                         <Image
                           src={project.image || "/placeholder.svg"}
                           alt={project.name}
@@ -131,28 +133,32 @@ export default function NGODashboard() {
                         />
                       </div>
 
-                      <div className="flex-1 p-4">
+                      <div className="flex-1 p-3 md:p-4">
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="font-semibold text-slate-800 leading-tight">{project.name}</h3>
-                          <Badge className={`${getStatusColor(project.status)} text-xs font-medium border`}>
+                          <h3 className="font-semibold text-slate-800 leading-tight text-sm md:text-base line-clamp-2">
+                            {project.name}
+                          </h3>
+                          <Badge
+                            className={`${getStatusColor(project.status)} text-xs font-medium border ml-2 flex-shrink-0`}
+                          >
                             {project.status}
                           </Badge>
                         </div>
 
-                        <div className="flex items-center gap-1 text-sm text-slate-500 mb-3">
-                          <MapPin className="h-3 w-3" />
+                        <div className="flex items-center gap-1 text-xs md:text-sm text-slate-500 mb-2 md:mb-3">
+                          <MapPin className="h-3 w-3 flex-shrink-0" />
                           <span className="truncate">{project.location}</span>
                         </div>
 
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-sm">
+                        <div className="space-y-1 md:space-y-2">
+                          <div className="flex justify-between text-xs md:text-sm">
                             <span className="text-slate-600">Progress</span>
                             <span className="font-semibold text-green-600">{project.progress}%</span>
                           </div>
 
-                          <div className="w-full bg-slate-200 rounded-full h-2">
+                          <div className="w-full bg-slate-200 rounded-full h-1.5 md:h-2">
                             <div
-                              className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-700"
+                              className="bg-gradient-to-r from-green-500 to-emerald-500 h-1.5 md:h-2 rounded-full transition-all duration-700"
                               style={{ width: `${project.progress}%` }}
                             />
                           </div>
@@ -171,35 +177,35 @@ export default function NGODashboard() {
         </motion.div>
 
         <motion.div
-          className="mt-8"
+          className="mt-6 md:mt-8 mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.6 }}
         >
           <Card className="premium-card">
-            <CardHeader>
-              <CardTitle className="text-xl">Quick Actions</CardTitle>
+            <CardHeader className="pb-3 md:pb-4">
+              <CardTitle className="text-lg md:text-xl">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 <Button
-                  className="h-16 flex-col gap-2 bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg"
+                  className="h-14 md:h-16 flex-col gap-1 md:gap-2 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg text-xs md:text-sm"
                   asChild
                 >
                   <Link href="/ngo/submit-claim">
-                    <Plus className="h-6 w-6" />
-                    <span className="text-sm font-medium">New Claim</span>
+                    <Plus className="h-5 w-5 md:h-6 md:w-6" />
+                    <span className="font-medium">New Claim</span>
                   </Link>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="h-16 flex-col gap-2 border-2 border-slate-200 hover:bg-slate-50 hover:border-slate-300 bg-transparent"
+                  className="h-14 md:h-16 flex-col gap-1 md:gap-2 border-2 border-slate-200 hover:bg-slate-50 hover:border-slate-300 bg-transparent text-xs md:text-sm"
                   asChild
                 >
                   <Link href="/ngo/projects">
-                    <FolderOpen className="h-6 w-6 text-slate-600" />
-                    <span className="text-sm font-medium text-slate-700">Projects</span>
+                    <FolderOpen className="h-5 w-5 md:h-6 md:w-6 text-slate-600" />
+                    <span className="font-medium text-slate-700">Projects</span>
                   </Link>
                 </Button>
               </div>

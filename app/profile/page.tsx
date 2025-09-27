@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import Link from "next/link"
 import { User, Star, Activity, LogOut, Settings, Award, Calendar, TrendingUp, Shield, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -68,6 +69,16 @@ export default function ProfilePage() {
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
+              <Link href="/" className="flex items-center mr-2">
+                <Image
+                  src="/Logo2.png"
+                  alt="Vanasthali Sankalp Logo"
+                  width={80}
+                  height={25}
+                  className="h-5 w-auto object-contain hover:opacity-80 transition-opacity"
+                  priority
+                />
+              </Link>
               <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
                 <User className="h-5 w-5 text-white" />
               </div>

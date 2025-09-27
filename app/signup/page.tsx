@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Link from "next/link"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -55,15 +56,17 @@ export default function SignupPage() {
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
 
       {/* Professional Header with Logo */}
-      <div className="absolute top-6 left-6 flex items-center gap-3">
-        <Image
-          src="/logo-placeholder.jpg"
-          alt="Vanasthali Sankalp Logo"
-          width={120}
-          height={38}
-          className="h-8 w-auto object-contain"
-          priority
-        />
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-3">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/Logo2.png"
+            alt="Vanasthali Sankalp Logo"
+            width={120}
+            height={38}
+            className="h-6 w-auto md:h-8 object-contain hover:opacity-80 transition-opacity"
+            priority
+          />
+        </Link>
       </div>
 
       <div className="w-full max-w-md">

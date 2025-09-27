@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TreePine, Shield, Users, Play, CheckCircle, Globe, Heart } from "lucide-react"
+import { ArrowRight, Shield, Users, Play, CheckCircle, Globe, Heart } from "lucide-react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -115,8 +115,10 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Enhanced Hero Section with Professional Design */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pb-16 md:pb-20"
+      >
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-background.jpg"
@@ -138,73 +140,76 @@ export default function HomePage() {
           <div className="floating-element absolute bottom-32 left-1/4 w-40 h-40 bg-lime-500/20 rounded-full blur-2xl" />
         </div>
 
-        <div ref={logoRef} className="absolute top-8 left-8 z-20">
-          {/* <div className="bg-white/15 backdrop-blur-md rounded-xl px-6 py-3 border border-white/20 shadow-2xl"> */}
-            <div className="flex items-center gap-3">
-              <Image
-                src="/Logo.png"
-                alt="Samudra Sankalp Logo"
-                width={120}
-                height={38}
-                className="h-8 w-auto object-contain"
-                priority
-              />
-            </div>
-          {/* </div> */}
+        <div ref={logoRef} className="absolute top-4 left-4 md:top-8 md:left-8 z-20">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/Logo2.png"
+              alt="Samudra Sankalp Logo"
+              width={100}
+              height={32}
+              className="h-6 w-auto md:h-8 md:w-auto object-contain"
+              priority
+            />
+          </div>
         </div>
 
-        <div className="relative z-10 text-center text-white px-6 max-w-7xl mx-auto">
-          <h1 ref={titleRef} className="hero-title mb-8">
-            <span className="block text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-4">Forest</span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-300 to-lime-300">
+        <div className="relative z-10 text-center text-white px-4 md:px-6 max-w-7xl mx-auto flex-1 flex flex-col justify-center">
+          <h1 ref={titleRef} className="hero-title mb-6 md:mb-8">
+            <span className="block text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-none mb-2 md:mb-4">
+              Forest
+            </span>
+            <span className="block text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-none mb-2 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-300 to-lime-300">
               Restoration
             </span>
-            <span className="block text-xl md:text-3xl lg:text-4xl font-light mt-6 text-white/90 tracking-wide">
+            <span className="block text-lg md:text-xl lg:text-3xl xl:text-4xl font-light mt-4 md:mt-6 text-white/90 tracking-wide">
               Reforestation Revolution
             </span>
           </h1>
 
-          <p ref={subtitleRef} className="hero-subtitle mb-12 max-w-4xl mx-auto">
+          <p
+            ref={subtitleRef}
+            className="hero-subtitle mb-8 md:mb-12 max-w-4xl mx-auto text-base md:text-lg lg:text-xl leading-relaxed px-2"
+          >
             Connecting NGOs and verifiers to create transparent, impactful tree restoration through verified
             reforestation claims and community-driven environmental accountability.
           </p>
 
           <div
             ref={buttonsRef}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center relative z-50"
+            className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center relative z-50 px-4 mb-12 md:mb-16"
             style={{ opacity: 1, visibility: "visible" }}
           >
             <Button
               size="lg"
-              className="hero-cta-primary group relative z-50 min-w-[200px] opacity-100 visible"
+              className="hero-cta-primary group relative z-50 w-full sm:w-auto min-w-[200px] opacity-100 visible h-12 md:h-14 text-base md:text-lg"
               onClick={() => router.push("/signup")}
               style={{ opacity: 1, visibility: "visible" }}
             >
-              <span className="mr-3 text-lg font-semibold">Start Your Journey</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span className="mr-3 font-semibold">Start Your Journey</span>
+              <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="hero-cta-secondary group bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:text-white relative z-50 min-w-[180px] opacity-100 visible"
+              className="hero-cta-secondary group bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:text-white relative z-50 w-full sm:w-auto min-w-[180px] opacity-100 visible h-12 md:h-14 text-base md:text-lg"
               style={{ opacity: 1, visibility: "visible" }}
             >
-              <Play className="h-5 w-5 mr-3 group-hover:scale-110 transition-transform" />
-              <span className="text-lg font-semibold">Watch Demo</span>
+              <Play className="h-4 w-4 md:h-5 md:w-5 mr-3 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold">Watch Demo</span>
             </Button>
           </div>
 
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/90">
-            <div className="flex items-center gap-3 text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <CheckCircle className="h-5 w-5 text-emerald-400" />
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 md:gap-8 text-white/90 px-4 relative z-10">
+            <div className="flex items-center gap-3 text-sm md:text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-4 py-2">
+              <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-emerald-400" />
               <span>500+ Verified Projects</span>
             </div>
-            <div className="flex items-center gap-3 text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <Globe className="h-5 w-5 text-green-400" />
+            <div className="flex items-center gap-3 text-sm md:text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-4 py-2">
+              <Globe className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
               <span>50+ NGO Partners</span>
             </div>
-            <div className="flex items-center gap-3 text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-              <Heart className="h-5 w-5 text-lime-400" />
+            <div className="flex items-center gap-3 text-sm md:text-base font-medium bg-white/10 backdrop-blur-sm rounded-full px-3 md:px-4 py-2">
+              <Heart className="h-4 w-4 md:h-5 md:w-5 text-lime-400" />
               <span>1M+ Trees Planted</span>
             </div>
           </div>

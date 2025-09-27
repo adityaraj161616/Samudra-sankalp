@@ -1,6 +1,8 @@
 "use client"
 
 import type React from "react"
+import Link from "next/link"
+import Image from "next/image"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -101,6 +103,16 @@ export default function NewProjectPage() {
       <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center gap-4">
+            <Link href="/" className="flex items-center mr-2">
+              <Image
+                src="/Logo2.png"
+                alt="Vanasthali Sankalp Logo"
+                width={100}
+                height={32}
+                className="h-6 w-auto object-contain hover:opacity-80 transition-opacity"
+                priority
+              />
+            </Link>
             <Button variant="ghost" onClick={() => router.push("/ngo/projects")} className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back to Projects
